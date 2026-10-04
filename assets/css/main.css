@@ -1570,3 +1570,67 @@ section,
   padding: 0;
   font-family: inherit;
 }
+
+/* "Open to ..." en la portada */
+.hero .open-to {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 15px;
+  background: rgba(5, 13, 24, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.hero .open-to .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+}
+@media (max-width: 768px) {
+  .hero .open-to { font-size: 13px; }
+}
+
+/* Sección de contacto final */
+.contact-cta h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.contact-cta p {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.contact-cta .contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 26px 0 16px;
+}
+.contact-cta .btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  transition: 0.3s;
+}
+.contact-cta .btn-contact:hover,
+.contact-cta .btn-contact-primary {
+  background: var(--accent-color);
+  color: #fff;
+}
+.contact-cta .btn-contact-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), #000 15%);
+}
+.contact-cta .contact-location {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
