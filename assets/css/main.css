@@ -1310,3 +1310,66 @@ section,
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
+
+/* Etiqueta "Part I / II / III" sobre el título de cada parte */
+.section-title .part-label {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 12px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+}
+
+/* Subtítulos dentro de Projects y Teaching */
+.projects-group-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 40px 0 20px;
+}
+.portfolio .container > .projects-group-title:first-child {
+  margin-top: 0;
+}
+
+/* Proyectos asesorados (docencia) */
+.advised-project {
+  height: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--surface-color);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.06);
+}
+.advised-project img,
+.advised-project .photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.advised-project .photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 2px dashed color-mix(in srgb, var(--default-color), transparent 70%);
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+.advised-project .photo-placeholder i {
+  font-size: 32px;
+}
+.advised-project h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.advised-project p {
+  font-size: 14px;
+  margin: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
