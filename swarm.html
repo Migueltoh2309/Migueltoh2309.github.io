@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Miguel Olórtegui</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="service-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/mito.png" alt="Miguel Olórtegui" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Miguel Olórtegui</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://github.com/Migueltoh2309" target="_blank" rel="noopener" title="GitHub"><i class="bi bi-github"></i></a>
+      <a href="mailto:molortegui@utec.edu.pe" title="Email"><i class="bi bi-envelope"></i></a>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">SwarmBot</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">SwarmBot</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+<style>
+    .portfolio-details-slider img {
+      max-width: 100%;
+      max-height: 300px;
+      height: auto;
+      display: inline-block;
+      object-fit: cover;
+    }
+    .portfolio-details-slider .swiper-slide {
+      max-height: 300px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .portfolio-details-slider {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+</style>
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/projects/swarm1.png" alt="SwarmBot architecture: ESP32-S3 robot and ROS 2 PC over Wi-Fi">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3>SwarmBot: Swarm of Mobile Robots with micro-ROS</h3>
+            <p>
+              A swarm of differential-drive mobile robots (robot_01 to robot_12) built on ESP32-S3 microcontrollers. Each robot runs ESP-IDF with FreeRTOS and a micro-ROS node, so it appears in ROS 2 Humble as a regular node, communicating with a PC over Wi-Fi.
+            </p>
+            <p>
+              The first robot already publishes its MPU6050 IMU at 20 Hz, runs a PI wheel-velocity loop at 100 Hz with encoder feedback, and recovers automatically if the micro-ROS agent or the Wi-Fi connection drops. On the PC side, a URDF model is visualized in RViz2 both in simulation and live with the real robot's orientation, and every node is namespaced to scale to multiple robots. Work in progress: odometry with both encoders, velocity commands and multi-robot launch.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Embedded Systems with ESP32-S3, ESP-IDF and FreeRTOS</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>micro-ROS and ROS 2 Communication over Wi-Fi</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Mobile Robot Modeling and Wheel Velocity Control</span></li>
+            </ul>
+            <p>
+              For more information about the project, check the following links:
+            </p>
+            <p>
+              <a href="https://github.com/Migueltoh2309/SwarmBot_microROS" target="_blank" rel="noopener" class="details-link"><i class="bi bi-github"></i> Source code (SwarmBot_microROS)</a>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Service Details Section -->
+
+  </main>
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Miguel Olórtegui</span></p>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

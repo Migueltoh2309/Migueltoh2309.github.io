@@ -1273,3 +1273,40 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Personalizaciones
+--------------------------------------------------------------*/
+/* Habilidades agrupadas en etiquetas (en vez de barras en %) */
+.skill-group {
+  height: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--surface-color);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.06);
+}
+.skill-group h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.skill-group h4 i {
+  color: var(--accent-color);
+  margin-right: 6px;
+}
+.skill-tag {
+  display: inline-block;
+  margin: 0 6px 8px 0;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 14px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  color: var(--heading-color);
+}
+
+/* Todas las tarjetas de proyectos con la misma proporción */
+.portfolio .portfolio-content img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
