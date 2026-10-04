@@ -1373,3 +1373,73 @@ section,
   margin: 0;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
+
+/* Tarjetas de proyectos: título y descripción siempre visibles debajo de la
+   imagen (la plantilla los mostraba solo al pasar el mouse, invisible en
+   celulares) y toda la tarjeta enlaza a la página del proyecto */
+.portfolio .portfolio-content {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: var(--surface-color);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.portfolio .portfolio-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+.portfolio .portfolio-content:hover img {
+  transform: none;
+}
+.portfolio .portfolio-content .portfolio-info,
+.portfolio .portfolio-content:hover .portfolio-info {
+  opacity: 1;
+  position: static;
+  background: none;
+  padding: 14px 16px 16px;
+  flex-grow: 1;
+}
+.portfolio .portfolio-content .portfolio-info h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.portfolio .portfolio-content .portfolio-info p {
+  position: static;
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--heading-color);
+}
+.portfolio .portfolio-content .portfolio-info .preview-link {
+  display: none;
+}
+.portfolio .portfolio-content .portfolio-info .details-link {
+  font-size: 0;
+}
+.portfolio .portfolio-content .portfolio-info .details-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+/* Botón "Download CV" en la portada */
+.hero .btn-cv {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 26px;
+  border-radius: 50px;
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.hero .btn-cv:hover {
+  background: color-mix(in srgb, var(--accent-color), #000 15%);
+  color: #fff;
+}
