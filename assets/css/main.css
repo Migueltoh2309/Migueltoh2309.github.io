@@ -1428,18 +1428,61 @@ section,
   z-index: 4;
 }
 
-/* Botón "Download CV" en la portada */
-.hero .btn-cv {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 10px 26px;
+/* Portada: degradado detrás del texto, botones y encuadre en celular */
+.hero:before {
+  background: linear-gradient(90deg, rgba(5, 13, 24, 0.82) 0%, rgba(5, 13, 24, 0.55) 40%, rgba(5, 13, 24, 0.05) 75%);
+}
+.hero h2 {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+.hero p span {
+  border-bottom-width: 1px;
+}
+.hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.hero .btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
   border-radius: 50px;
-  background: var(--accent-color);
-  color: #fff;
+  font-size: 15px;
   font-weight: 600;
+  letter-spacing: 0.3px;
   transition: 0.3s;
 }
-.hero .btn-cv:hover {
-  background: color-mix(in srgb, var(--accent-color), #000 15%);
+.hero .btn-hero-primary {
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
   color: #fff;
+}
+.hero .btn-hero-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), #000 15%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 15%);
+  color: #fff;
+}
+.hero .btn-hero-outline {
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+.hero .btn-hero-outline:hover {
+  background: #fff;
+  color: var(--heading-color);
+}
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-end;
+    padding-bottom: 60px;
+  }
+  .hero img {
+    object-position: 82% center;   /* que se vea la persona, no solo el robot */
+  }
+  .hero:before {
+    background: linear-gradient(0deg, rgba(5, 13, 24, 0.88) 0%, rgba(5, 13, 24, 0.55) 40%, rgba(5, 13, 24, 0.05) 70%);
+  }
 }
