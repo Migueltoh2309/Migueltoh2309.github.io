@@ -1419,13 +1419,16 @@ section,
   display: none;
 }
 .portfolio .portfolio-content .portfolio-info .details-link {
-  font-size: 0;
+  position: static;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--accent-color);
 }
-.portfolio .portfolio-content .portfolio-info .details-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 4;
+.portfolio .portfolio-content:hover .portfolio-info .details-link i {
+  margin-left: 4px;
 }
 
 /* Portada: degradado detrás del texto, botones y encuadre en celular */
@@ -1485,4 +1488,85 @@ section,
   .hero:before {
     background: linear-gradient(0deg, rgba(5, 13, 24, 0.88) 0%, rgba(5, 13, 24, 0.55) 40%, rgba(5, 13, 24, 0.05) 70%);
   }
+}
+
+/* Videos en las páginas de proyecto */
+.video-grid video {
+  width: 100%;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+}
+.video-grid .video-caption {
+  font-size: 14px;
+  margin: 8px 0 0;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+/* Franja de cifras y robots bajo la portada */
+#highlights {
+  padding: 40px 0;
+}
+#highlights .stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+#highlights .stats-item > span {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--heading-color);
+  line-height: 1.1;
+}
+#highlights .stats-item i {
+  font-size: 30px;
+  color: var(--accent-color);
+  margin-bottom: 6px;
+}
+#highlights .stats-item p {
+  margin: 4px 0 0;
+  font-size: 15px;
+}
+.robots-strip {
+  margin-top: 26px;
+  text-align: center;
+}
+.robots-strip-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin-bottom: 10px;
+}
+.robot-chip {
+  display: inline-block;
+  margin: 0 6px 8px 0;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  color: var(--heading-color);
+}
+/* Contadores de la franja: en línea con su prefijo/sufijo ("Top 10%") y
+   sin los márgenes/flotados del diseño original de la plantilla */
+#highlights .stats-item i {
+  float: none;
+  line-height: 1;
+}
+#highlights .stats-item .purecounter {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+#highlights .stats-item p {
+  margin: 4px 0 0;
+  padding: 0;
+  font-family: inherit;
 }
