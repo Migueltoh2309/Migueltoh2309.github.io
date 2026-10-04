@@ -120,11 +120,15 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/projects/seguidor1.jpg" alt="What the robot's infrared camera sees: a shadowed zone, a curve and the end bar">
+                  <img src="assets/img/projects/seguidor1.jpg" alt="Unitree H1-2 on the level 3 track in MuJoCo, with the robot's infrared camera view and the detected line">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/projects/seguidor2.png" alt="Robot trajectory over the level 3 track and lateral error">
+                  <img src="assets/img/projects/seguidor2.jpg" alt="Detected tape (green) in a shadow, on a curve and at the finish bar">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/projects/seguidor3.png" alt="Robot trajectory over the level 3 track and lateral error to the tape">
                 </div>
 
               </div>
@@ -135,7 +139,7 @@
               A technical challenge from the Robotics40 training course on the Unitree H1-2: make the 70 kg humanoid walk along a 5 cm tape on the floor using only the RealSense D435i in its head as position feedback, and stop by itself at the finish bar. The robot moves with Unitree's walking controller (<code>LocoClient.Move</code>); the challenge is the closed loop that decides which velocities to command from what the camera sees. It is not a wheeled line follower: the camera is 1.7 m above the floor with a blind zone in front of the feet, the image sways with every step, the gait responds with delay, the heading drifts about 2°/s and there is no odometry.
             </p>
             <p>
-              The solution is split into perception, estimation, control, supervisor and logging blocks, and the same code runs in simulation and on the robot. Perception works on the infrared image projected to a bird's-eye view of the floor, with an adaptive relative-contrast threshold that keeps detecting the tape inside shadows (2,897 points at 1.0 cm error, versus 15 points and 67% false detections with a fixed threshold). Control is pure pursuit with a short lookahead and gyro-based drift compensation, and the supervisor handles waiting, tracking, line loss, finish and emergency stop. Validated in a MuJoCo simulator with the measured camera intrinsics and gait delay: 12/12 successful runs over 4 track levels. Testing on the real robot is the next step.
+              The solution is split into perception, estimation, control, supervisor and logging blocks, and the same code runs in simulation and on the robot. Perception works on the infrared image projected to a bird's-eye view of the floor, with an adaptive relative-contrast threshold that keeps detecting the tape inside shadows (2,897 points at 1.0 cm error, versus 15 points and 67% false detections with a fixed threshold). Control is pure pursuit with a short lookahead and gyro-based drift compensation, and the supervisor handles waiting, tracking, line loss, finish and emergency stop. Validated in a MuJoCo simulator with the measured camera intrinsics and gait delay: 12/12 successful runs over 4 track levels; on the level 3 track (curves, a 40 cm gap and a shadow) the robot stays on average 2.7 cm from the tape. Testing on the real robot is the next step.
             </p>
             <ul>
               <li><i class="bi bi-check-circle"></i> <span>Camera Geometry, Calibration and Bird's-Eye-View Perception</span></li>
