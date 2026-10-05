@@ -1634,3 +1634,27 @@ section,
   font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
+
+/* Proyectos asesorados: textos y enlace al póster */
+.advised-project {
+  display: flex;
+  flex-direction: column;
+}
+.advised-project .advised-course {
+  font-size: 13px;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.advised-project p.advised-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--default-color);
+  flex-grow: 1;
+}
+.advised-project .advised-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
